@@ -1,20 +1,25 @@
+var topics = ["dog", "cat", "zebra", "horse", "monkey", "gorilla", "fish", "seal", "sea lion",
+"snake", "rabbit", "coyote", "duck", "bird", "shark", "frog", "marsupial", "thylacine", "wolf", "bear",
+"elephant"]
 
-        // creates a click function for submitting the search
+for (var i = 0; i < topics.length; i++) { 
+    var buttons = $('<button>'+ topics[i] + '</button>') 
+    buttons.appendTo('#topics'); 
+}         
+
+// creates a click function for clicking the buttons
         $(document).ready(function() {
-            $("#submitWeather").click(function(){
+            $("#submitweather").click(function(){
                             console.log('search...')
                             // creating a variable for search term
-                var city = $("#search").val();
+                var topic = $("#topic").val();
         
                 // if the city value is not blank, run ajax call to request information from the server
-                if(city !==''){
+                if(topic !==''){
                   
                 // ajax call
                                 $.ajax({
-                                    // url: "http://api.openweathermap.org/data/2.5/weather?q={london}&APPID=d4fd3719101afa0124c6ea3df4c057b5",
-        
-        
-                                    url: "https://api.giphy.com/v1/gifs/random?api_key=qs2bKebUVChguz65nBpVv6CbyYU8EYH6&tag=&rating=R",
+                                    url: "https://api.giphy.com/v1/gifs/" + topic + "?api_key=qs2bKebUVChguz65nBpVv6CbyYU8EYH6&tag",
                                     type: 'GET',
                                     dataType: "jsonp",
                                     success: function(data){

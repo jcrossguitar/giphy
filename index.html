@@ -18,22 +18,32 @@
     <body>
         <!-- this area is our jumbotron with some style elements -->
 <div class="jumbotron" style="margin-bottom:0px; color:white; background-color: rgb(54, 125, 146);">
-        <h2 class="text-center" style="font-size:50px; font-weight:600; text-align:center">Get Current Weather</h2>
+        <h2 class="text-center" style="font-size:50px; font-weight:600; text-align:center">Giphy Page</h2>
     </div>
     <!-- this is the div that holds the search i cant get the words to center in the page-->
     <div class="container" style="text-align:center;">
-        <div class="row form-group from-inline" id="row" style="margin-bottom:20px; text-align:center;">
-            <h3 class="text-center text-primary" style="color:black; text-align:center;">City Name</h3>
+        <div class="row" id="row" style="margin-bottom:20px; text-align:center; float:center;">
+            <h3 class="text-center text-primary" style="color:black; text-align:center;">Giphy Search</h3>
             <span id="error"></span>
         </div>
     
-        <div class="row form-group form-inline" id="rowDiv">
-            <input type="text" name="city" id="city" class="form-control" placeholder="City Name">
-            <button id="submitWeather" type="button" class="btn btn-primary">Search City</button>
-        </div>
+
+        <form action="index.html" target="_blank" method="GET">
+            Search:<br>
+            <input id="topic" type="text" name="first" value="">
+            <br>
+            <input type="submit" value="Submit">
+          </form>
     
         <div id="show"></div>
+          <br>
+          <br>
+        <div id="topics" style="margin:5px; padding:5px;"></div><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
     
     </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="assets/javascript.js"></script>
     </body>
 </html>
