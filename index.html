@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <!-- qs2bKebUVChguz65nBpVv6CbyYU8EYH6 api key for giphy -->
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="assets/style.css">
+        <link rel="stylesheet" href="assets/javascript.js">
+        <link rel="stylesheet" href="assets/reset.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <title>Giphy Homework</title>
+    </head>
+
+    <!-- request url -->
+    <!-- https://api.giphy.com/v1/gifs/random?api_key=qs2bKebUVChguz65nBpVv6CbyYU8EYH6&tag=&rating=R -->
+
+    <body>
+        <!-- this area is our jumbotron with some style elements -->
+<div class="jumbotron" style="margin-bottom:0px; color:white; background-color: rgb(54, 125, 146);">
+        <h2 class="text-center" style="font-size:50px; font-weight:600; text-align:center">Get Current Weather</h2>
+    </div>
+    <!-- this is the div that holds the search i cant get the words to center in the page-->
+    <div class="container" style="text-align:center;">
+        <div class="row form-group from-inline" id="row" style="margin-bottom:20px; text-align:center;">
+            <h3 class="text-center text-primary" style="color:black; text-align:center;">City Name</h3>
+            <span id="error"></span>
+        </div>
+    
+        <div class="row form-group form-inline" id="rowDiv">
+            <input type="text" name="city" id="city" class="form-control" placeholder="City Name">
+            <button id="submitWeather" type="button" class="btn btn-primary">Search City</button>
+        </div>
+    
+        <div id="show"></div>
+    
+    </div>
+    </body>
+</html>
