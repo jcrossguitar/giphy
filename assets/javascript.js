@@ -16,22 +16,22 @@ for (var i = 0; i < topics.length; i++) {
                             // creating a variable for search term
                 var topic = $("#topic").val();
         
+
+                var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=qs2bKebUVChguz65nBpVv6CbyYU8EYH6&limit=10");
+                    xhr.done(function(data) { console.log("success got data", data); });
                 // if the city value is not blank, run ajax call to request information from the server
-                if(topic !==''){
-                  
+                 
                 // ajax call
-                                $.ajax({
-                                    url: "https://api.giphy.com/v1/gifs/" + topics + "?api_key=qs2bKebUVChguz65nBpVv6CbyYU8EYH6&tag",
-                                    type: 'GET',
-                                    dataType: "jsonp",
-                                    success: function(data){
-                                        console.log(data)
-                                    }
-                                })
+                                // $.ajax({
+                                //     url: "https://api.giphy.com/v1/gifs/" + topics + "&?api_key=qs2bKebUVChguz65nBpVv6CbyYU8EYH6&tag",
+                                //     type: 'GET',
+                                //     dataType: "jsonp",
+                                //     success: function(data){
+                                //         console.log(data)
+                                //     }
+                                // })
                 // display an error if form submitted blank
-                            }else{
-                                $("#error").html('Field cannot be empty');
-                            }
+                            
                             // this area is my function for creating buttons, but is not working at the moment
                             function myFunction() {
                                 var btn = document.createElement("#topics");
