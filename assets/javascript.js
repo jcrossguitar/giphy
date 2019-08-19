@@ -71,8 +71,6 @@ $(document).ready(function() {
             xhr.done(function(data) { console.log("success got data", data); })
             .then(function(response) {
                 createRow(response);
-
-                $(".table").text(response.slug);
                 
         
             });
