@@ -31,7 +31,7 @@ var createRow = function(data) {
             $("#topics").click(function(){
                             console.log('search...')
                             // creating a variable for search term
-                var topic = $("#topic").val();
+                var topic = $("#topics").val();
         
 
                 var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=qs2bKebUVChguz65nBpVv6CbyYU8EYH6&limit=10");
