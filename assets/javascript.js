@@ -1,8 +1,22 @@
-
+$(document).ready(function() {
 
 var topics = ["dog", "cat", "zebra", "horse", "monkey", "gorilla", "fish", "seal", "sea lion",
 "snake", "rabbit", "coyote", "duck", "bird", "shark", "frog", "marsupial", "thylacine", "wolf", "bear",
-"elephant"]
+"elephant"];
+// ADDED THIS FORLOOP AND FUNCTION FROM SOLUTIONS
+function populateButtons(arrayToUse, classToAdd, areaToAddTo) {
+    $(areaToAddTo).empty();
+
+    for (var i = 0; i < arrayToUse.length; i++) {
+        var a = $("<button>");
+        a.addClass(classToAdd);
+        a.attr("data-type", arrayToUse[i]);
+        a.text(arrayToUse[i]);
+        $(areaToAddTo).append(a);
+      }
+  
+    }
+
 // this area creates a for loop that adds buttons for each "topics" value
 for (var i = 0; i < topics.length; i++) { 
     var buttons = $('<button>'+ topics[i] + '</button>') 
@@ -55,7 +69,7 @@ $(document).ready(function() {
                     animalDiv.append(p);
                     animalDiv.append(animalImage);
 
-                    $(".table").append(animalDiv);
+                    $("#show").append(animalDiv);
 
 
                 }
@@ -99,4 +113,34 @@ $(document).ready(function() {
                 
                 });
             });
+// ADDED THIS AREA FROM SOLUTIONS
+
+            $(document).on("click", ".animal-image", function() {
+
+                var state = $(this).attr("data-state");
+            
+                if (state === "still") {
+                  $(this).attr("src", $(this).attr("data-animate"));
+                  $(this).attr("data-state", "animate");
+                }
+                else {
+                  $(this).attr("src", $(this).attr("data-still"));
+                  $(this).attr("data-state", "still");
+                }
+              });
+            
+              $("#inputBtn").on("click", function(event) {
+                event.preventDefault();
+                var newAnimal = $("input").eq(0).val();
+            
+                if (newAnimal.length > 2) {
+                  topics.push(newAnimal);
+                }
+            
+                populateButtons(topics, "animal-button", "#topics");
+            
+              });
+            
+              populateButtons(topics, "animal-button", "#topics");
+            });            
         
