@@ -48,15 +48,18 @@ $(document).ready(function() {
 
         var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=qs2bKebUVChguz65nBpVv6CbyYU8EYH6&limit=10");
                  
-            xhr.done(function(data) { console.log("success got data", data); })
+            xhr.done(function(data) { console.log("success got data", data); }) 
             .then(function(response) {
                 var results = response.data;
                 // createRow(response);
                 //this area i took from the solutions because the way i was attempting was not working. 
                 for (var i = 0; i < results.length; i++) {
                     var animals = $("<div class=\"animal-item\">");
+                    
                     var rating = results[i].rating;
+
                     var p = $("<p>").text("Rating: " + rating);
+
                     var animated = results[i].images.fixed_height.url;
                     var still = results[i].images.fixed_height_still.url;
 
@@ -73,8 +76,8 @@ $(document).ready(function() {
                     $("#show").append(animals);
 
 
-                }
-            });
+            }
+        });
                  
                             // this area is my function for creating buttons, but is not working at the moment
                             // function myFunction() {
@@ -83,8 +86,8 @@ $(document).ready(function() {
                             //     document.body.appendChild(buttons);
                             //   }
                 
-                });
-            });
+    });
+});
 
 
   // this area uses the api to search based on the term input into the search. an object has been captured by clicking the search button
