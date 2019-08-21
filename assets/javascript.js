@@ -17,6 +17,7 @@ function populateButtons(arrayToUse, classToAdd, areaToAddTo) {
   
     }
 
+
 // this area creates a for loop that adds buttons for each "topics" value
 for (var i = 0; i < topics.length; i++) { 
     var buttons = $('<button>'+ topics[i] + '</button>') 
@@ -66,10 +67,10 @@ $(document).ready(function() {
                     animalImage.attr("data-state", "still");
                     animalImage.addClass("animal-image");
 
-                    animalDiv.append(p);
-                    animalDiv.append(animalImage);
+                    animals.append(p);
+                    animals.append(animalImage);
 
-                    $("#show").append(animalDiv);
+                    $("#show").append(animals);
 
 
                 }
@@ -94,17 +95,16 @@ $(document).ready(function() {
                             // creating a variable for search term
         var search = $("#topic").val();
              // this area is my function for creating buttons, but is not working at the moment
-            $("#inputBtn").click(function myFunction() {
-                var btn = document.getElementById(search);
-                search.innerHTML = "";
-                document.body.appendChild("#topics")
-            });
+            // $("#inputBtn").click(function myFunction() {
+            //     var btn = document.getElementById(search);
+            //     search.innerHTML = "";
+            //     document.body.appendChild("#topics")
+            // });
         
 
         var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + search + "&api_key=qs2bKebUVChguz65nBpVv6CbyYU8EYH6&limit=10");
             xhr.done(function(data) { console.log("success got data", data); })
             .then(function(response) {
-                createRow(response);
                 
         
             });
