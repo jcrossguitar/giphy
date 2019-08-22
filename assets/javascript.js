@@ -8,7 +8,7 @@ function populateButtons(arrayToUse, classToAdd, areaToAddTo) {
     $(areaToAddTo).empty();
 
     for (var i = 0; i < arrayToUse.length; i++) {
-        var a = $("<button>");
+        var a = $("<button class='srchBtn'>");
         a.addClass(classToAdd);
         a.attr("data-type", arrayToUse[i]);
         a.text(arrayToUse[i]);
@@ -19,10 +19,10 @@ function populateButtons(arrayToUse, classToAdd, areaToAddTo) {
 
 
 // this area creates a for loop that adds buttons for each "topics" value
-for (var i = 0; i < topics.length; i++) { 
-    var buttons = $('<button>'+ topics[i] + '</button>') 
-    buttons.appendTo('#topics'); 
-} 
+// for (var i = 0; i < topics.length; i++) { 
+//     var buttons = $('<button>'+ topics[i] + '</button>') 
+//     buttons.appendTo('#topics'); 
+// } 
 
 var createRow = function(data) {
     // Create a new table row element
@@ -40,11 +40,12 @@ var createRow = function(data) {
 
 // creates a click function for clicking the buttons
 $(document).ready(function() {
-    $("#topics").click(function(){
+  
+    $('.srchBtn').click(function(){
                     console.log('search...')
                             // creating a variable for search term
-        var topic = $("#topics").val();
-        
+        var topic = $(this).attr('data-type');
+        console.log(topic)
 
         var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=qs2bKebUVChguz65nBpVv6CbyYU8EYH6&limit=10");
                  
