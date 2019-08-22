@@ -106,7 +106,7 @@ $(document).ready(function() {
             // });
         
 
-        var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=" + search + "&api_key=qs2bKebUVChguz65nBpVv6CbyYU8EYH6&limit=10");
+        var xhr = $.get("https://api.giphy.com/v1/gifs/search?q=" + search + "&api_key=qs2bKebUVChguz65nBpVv6CbyYU8EYH6&limit=10");
             xhr.done(function(data) { console.log("success got data", data); })
             .then(function(response) {
                 
